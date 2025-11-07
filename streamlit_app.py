@@ -947,11 +947,11 @@ def generate_recommendation(household, simulation_results):
 # Generate recommendation
 recommended_scenario = generate_recommendation(sample_household, simulation_results)
 
----
-## Conclusions & Business Impact
+
+"""## Conclusions & Business Impact
 
 ### Key Findings
-"""
+
 1. **Uncertainty Quantification:** Monte Carlo simulation reveals the full range of possible outcomes, not just average scenarios. For Florida housing, 90% confidence intervals span $50k-$150k in costs depending on insurance and market volatility.
 
 2. **Florida-Specific Risks:** Hurricane insurance represents 15-25% of total homeownership costs in high-risk regions. This dramatically changes affordability calculations compared to other states.
