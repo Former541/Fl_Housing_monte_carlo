@@ -1,85 +1,75 @@
-# Florida Housing Affordability: Monte Carlo Decision Support Analysis
+"""
+Florida Housing Affordability: Monte Carlo Decision Support Analysis
+Author: Horacio Fonseca, Data Analyst
 
-"""**Author:** Horacio Fonseca, Data Analyst
+Author: Oscar Rodriguez, Data Analyst
 
-**Author:** Oscar Rodriguez, Data Analyst
+Date: October 2025
+Project: Monte Carlo Simulation for Housing Decision-Making Under Uncertainty
 
-**Date:** October 2025  
-**Project:** Monte Carlo Simulation for Housing Decision-Making Under Uncertainty
-
-**Project:** Data Mining, MDC, Profe
-## Executive Summary
-
-This analysis addresses a critical question facing Florida residents: **"Should I rent or buy a home, and if buying, which price range can I afford?"**
+Project: Data Mining, MDC, Professor Ernesto Lee.
+Executive Summary
+This analysis addresses a critical question facing Florida residents: "Should I rent or buy a home, and if buying, which price range can I afford?"
 
 Using Monte Carlo simulation with 10,000+ scenarios per household, this project quantifies:
-- **Affordability probability** across different housing scenarios
-- **Default risk** and financial stress exposure
-- **Equity building potential** over 5-30 year horizons
-- **Total cost distributions** including Florida-specific factors
 
-**Key Innovation:** Models Florida-specific costs including hurricane insurance ($3,500-$8,500/year), regional price variations (Miami 35% premium), and property tax structures unique to the state.
+Affordability probability across different housing scenarios
+Default risk and financial stress exposure
+Equity building potential over 5-30 year horizons
+Total cost distributions including Florida-specific factors
+Key Innovation: Models Florida-specific costs including hurricane insurance ( 3,500− 8,500/year), regional price variations (Miami 35% premium), and property tax structures unique to the state.
 
-**Business Value:** Supports data-driven housing decisions for individuals, financial advisors, and policy makers by quantifying uncertainty in long-term housing affordability.
+Business Value: Supports data-driven housing decisions for individuals, financial advisors, and policy makers by quantifying uncertainty in long-term housing affordability.
 
+Part 1: Problem Discovery & Business Context
+The Business Problem
+Florida's housing market presents unique challenges:
 
-## Part 1: Problem Discovery & Business Context
-
-### The Business Problem
-
-- **Florida housing market presents unique challenges:
-- **Hurricane insurance crisis:** Premiums increasing 10-20% annually
-- **Regional price disparities:** Miami homes cost 35% more than Panhandle
-- **Income variability:** Tourism-heavy economy with seasonal fluctuations
-- **Long-term uncertainty:** Interest rates, property values, insurance costs all volatile
-
-### Why Monte Carlo?
-
+Hurricane insurance crisis: Premiums increasing 10-20% annually
+Regional price disparities: Miami homes cost 35% more than Panhandle
+Income variability: Tourism-heavy economy with seasonal fluctuations
+Long-term uncertainty: Interest rates, property values, insurance costs all volatile
+Why Monte Carlo?
 Traditional affordability analysis uses static "30% of income" rules. This fails to capture:
-1. **Income changes** (raises, job loss, career transitions)
-2. **Interest rate fluctuations** (refinancing opportunities, ARM adjustments)
-3. **Property value volatility** (appreciation vs. depreciation scenarios)
-4. **Insurance shocks** (hurricane seasons driving 20% premium spikes)
-5. **Unexpected expenses** (repairs, HOA increases, special assessments)
 
+Income changes (raises, job loss, career transitions)
+Interest rate fluctuations (refinancing opportunities, ARM adjustments)
+Property value volatility (appreciation vs. depreciation scenarios)
+Insurance shocks (hurricane seasons driving 20% premium spikes)
+Unexpected expenses (repairs, HOA increases, special assessments)
 Monte Carlo simulation models all these uncertainties simultaneously across thousands of scenarios.
 
-### Stakeholders
+Stakeholders
+Home buyers: Comparing rent vs. buy decisions
+Financial advisors: Providing data-driven housing recommendations
+Lenders: Assessing default risk beyond credit scores
+Policy makers: Understanding affordability crisis dimensions
+Decision Framework
+Four Housing Scenarios:
 
-- **Home buyers:** Comparing rent vs. buy decisions
-- **Financial advisors:** Providing data-driven housing recommendations
-- **Lenders:** Assessing default risk beyond credit scores
-- **Policy makers:** Understanding affordability crisis dimensions
+Keep Renting: No equity building, but flexibility and lower risk
+Buy Starter Home (200k−300k): FHA 5% down, builds equity, moderate risk
+Buy Standard Home (300k−500k): Better appreciation, higher costs
+Buy Premium Home ($500k+): Maximum equity potential, maximum risk
+Part 2: Data Sources & Generation
+Synthetic Data Approach
+This analysis uses synthetic household data generated to match Florida demographic and economic characteristics:
 
-### Decision Framework
+Data Sources for Parameters:
 
-**Four Housing Scenarios:**
-1. **Keep Renting:** No equity building, but flexibility and lower risk
-2. **Buy Starter Home ($200k-$300k):** FHA 5% down, builds equity, moderate risk
-3. **Buy Standard Home ($300k-$500k):** Better appreciation, higher costs
-4. **Buy Premium Home ($500k+):** Maximum equity potential, maximum risk
+U.S. Census Bureau: Florida income distributions, household sizes
+Bureau of Labor Statistics: Employment sector distributions
+Florida Office of Insurance Regulation: Hurricane insurance premiums
+Zillow & Realtor.com: Regional housing price indices
+Federal Reserve: Interest rate historical volatility
+Why Synthetic Data?
 
+Privacy: No individual household data exposure
+Completeness: Can generate edge cases (low income + high risk, etc.)
+Scalability: Generate 100s to 1000s of households
+Validation: Parameters match empirical Florida distributions
+Data Amplification: Algorithm generates 30% additional edge-case households to ensure robust testing across income/risk spectrum."""
 
-## Part 2: Data Sources & Generation
-
-### Synthetic Data Approach
-
-This analysis uses **synthetic household data** generated to match Florida demographic and economic characteristics:
-
-**Data Sources for Parameters:**
-- U.S. Census Bureau: Florida income distributions, household sizes
-- Bureau of Labor Statistics: Employment sector distributions
-- Florida Office of Insurance Regulation: Hurricane insurance premiums
-- Zillow & Realtor.com: Regional housing price indices
-- Federal Reserve: Interest rate historical volatility
-
-**Why Synthetic Data?**
-1. **Privacy:** No individual household data exposure
-2. **Completeness:** Can generate edge cases (low income + high risk, etc.)
-3. **Scalability:** Generate 100s to 1000s of households
-4. **Validation:** Parameters match empirical Florida distributions
-
-**Data Amplification:** Algorithm generates 30% additional edge-case households to ensure robust testing across income/risk spectrum."""
 
 # Import required libraries
 import numpy as np
@@ -103,7 +93,7 @@ print("Libraries loaded successfully")
 print(f"NumPy version: {np.__version__}")
 print(f"Pandas version: {pd.__version__}")
 
-
+---
 ## Step 1: Load Configuration & Parameters
 
 # Florida-specific regional and economic parameters
@@ -167,10 +157,10 @@ print(f"  Regions: {len(FLORIDA_REGIONS)}")
 print(f"  Employment sectors: {len(EMPLOYMENT_SECTORS)}")
 print(f"  Price range across regions: {min(REGIONAL_PRICE_MULTIPLIERS.values()):.2f}x - {max(REGIONAL_PRICE_MULTIPLIERS.values()):.2f}x")
 
-
+"""
 ## Step 2: Household Data Generation
 
-###Generate synthetic Florida households with realistic characteristics
+Generate synthetic Florida households with realistic characteristics"""
 
 def generate_florida_households(n_households=100, amplify=True):
     """
@@ -285,6 +275,7 @@ print(f"\nIncome range: ${households_df['annual_income'].min():,.0f} - ${househo
 print(f"Credit score range: {households_df['credit_score'].min():.0f} - {households_df['credit_score'].max():.0f}")
 print(f"Risk score range: {households_df['risk_score'].min():.1f} - {households_df['risk_score'].max():.1f}")
 
+
 ## Step 3: Exploratory Data Analysis
 
 # Display sample households
@@ -357,7 +348,7 @@ print("Data exploration complete")
 
 ## Step 4: Define Housing Scenarios & Parameters
 
-##Four scenarios with different cost structures and risk profiles
+"""Four scenarios with different cost structures and risk profiles"""
 
 @dataclass
 class HousingScenarioParameters:
@@ -446,7 +437,7 @@ for name, params in scenarios.items():
 
 ## Step 5: Monte Carlo Simulation Implementation
 
-##Core simulation engine - models 10,000+ scenarios per household per housing option
+"""Core simulation engine - models 10,000+ scenarios per household per housing option"""
 
 def simulate_housing_scenario(household, scenario_params, num_simulations=10000, time_horizon_years=10):
     """
@@ -649,7 +640,7 @@ print("Ready to run 10,000+ simulations per household per scenario")
 
 ## Step 6: Run Simulations for Sample Household
 
-## Demonstrate full Monte Carlo analysis for one representative household
+"""Demonstrate full Monte Carlo analysis for one representative household"""
 
 # Select a representative household (median income, moderate risk)
 median_income = households_df['annual_income'].median()
@@ -793,6 +784,7 @@ plt.show()
 
 print("Visualizations complete")
 
+
 ## Step 9: Risk Assessment & Confidence Intervals
 
 # Calculate confidence intervals and risk metrics
@@ -875,12 +867,14 @@ ELIF income > $120,000 AND savings > $100,000:
 ELSE:
     → RECOMMEND: Keep Renting 2-3 years, improve credit/savings, then reassess
 ```
+
 """
+
 # Generate automated recommendation for sample household
 def generate_recommendation(household, simulation_results):
-    
-  ##  Generate data-driven housing recommendation based on Monte Carlo results
-    
+    """
+    Generate data-driven housing recommendation based on Monte Carlo results
+    """
     income = household['annual_income']
     risk_score = household['risk_score']
     savings = household['savings']
@@ -946,6 +940,7 @@ def generate_recommendation(household, simulation_results):
 recommended_scenario = generate_recommendation(sample_household, simulation_results)
 
 
+
 ## Conclusions & Business Impact
 
 ### Key Findings
@@ -958,7 +953,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 
 4. **Risk-Reward Trade-offs:** Higher-priced homes build more equity ($150k+ over 10 years) but carry 3-4x higher default risk for moderate-income households.
 
-5. **Income Sensitivity:** A $10,000 income decrease can shift affordability from 80% to 45%, highlighting importance of emergency savings. 
+5. **Income Sensitivity:** A $10,000 income decrease can shift affordability from 80% to 45%, highlighting importance of emergency savings.
 
 ### Business Applications
 
@@ -998,7 +993,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 4. **Tax Optimization:** Model refinancing decisions and mortgage interest deduction
 5. **Portfolio Theory:** Compare housing investment to alternative asset allocations
 
-
+---
 
 **Author:** Horacio Fonseca, Data Analyst
 
@@ -1008,7 +1003,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 **Live Application:** [Streamlit App Link]  
 **Date:** October 2025
 
-
+---
 
 *This analysis demonstrates Monte Carlo simulation methodology for housing affordability decision-making under uncertainty. All results are based on synthetic data and probabilistic models. Consult qualified financial professionals before making housing decisions.*
 """
