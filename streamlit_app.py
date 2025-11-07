@@ -29,7 +29,7 @@ Using Monte Carlo simulation with 10,000+ scenarios per household, this project 
 
 ### The Business Problem
 
-- **Florida's housing market presents unique challenges:
+- **Florida housing market presents unique challenges:
 - **Hurricane insurance crisis:** Premiums increasing 10-20% annually
 - **Regional price disparities:** Miami homes cost 35% more than Panhandle
 - **Income variability:** Tourism-heavy economy with seasonal fluctuations
