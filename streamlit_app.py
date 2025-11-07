@@ -22,7 +22,7 @@ Using Monte Carlo simulation with 10,000+ scenarios per household, this project 
 
 **Business Value:** Supports data-driven housing decisions for individuals, financial advisors, and policy makers by quantifying uncertainty in long-term housing affordability.
 
----
+
 ## Part 1: Problem Discovery & Business Context
 
 ### The Business Problem
@@ -59,7 +59,7 @@ Monte Carlo simulation models all these uncertainties simultaneously across thou
 3. **Buy Standard Home ($300k-$500k):** Better appreciation, higher costs
 4. **Buy Premium Home ($500k+):** Maximum equity potential, maximum risk
 
----
+
 ## Part 2: Data Sources & Generation
 
 ### Synthetic Data Approach
@@ -167,7 +167,7 @@ print(f"  Regions: {len(FLORIDA_REGIONS)}")
 print(f"  Employment sectors: {len(EMPLOYMENT_SECTORS)}")
 print(f"  Price range across regions: {min(REGIONAL_PRICE_MULTIPLIERS.values()):.2f}x - {max(REGIONAL_PRICE_MULTIPLIERS.values()):.2f}x")
 
----
+
 ## Step 2: Household Data Generation
 
 Generate synthetic Florida households with realistic characteristics
@@ -285,7 +285,6 @@ print(f"\nIncome range: ${households_df['annual_income'].min():,.0f} - ${househo
 print(f"Credit score range: {households_df['credit_score'].min():.0f} - {households_df['credit_score'].max():.0f}")
 print(f"Risk score range: {households_df['risk_score'].min():.1f} - {households_df['risk_score'].max():.1f}")
 
----
 ## Step 3: Exploratory Data Analysis
 
 # Display sample households
@@ -355,7 +354,7 @@ plt.show()
 
 print("Data exploration complete")
 
----
+
 ## Step 4: Define Housing Scenarios & Parameters
 
 Four scenarios with different cost structures and risk profiles
@@ -444,7 +443,7 @@ for name, params in scenarios.items():
         print(f"  Base Rent: ${params.rent_base_monthly:,.0f}/month")
         print(f"  Annual Increase: {params.rent_increase_annual_min:.0%} - {params.rent_increase_annual_max:.0%}")
 
----
+
 ## Step 5: Monte Carlo Simulation Implementation
 
 Core simulation engine - models 10,000+ scenarios per household per housing option
@@ -647,7 +646,7 @@ def simulate_housing_scenario(household, scenario_params, num_simulations=10000,
 print("Monte Carlo simulation function defined")
 print("Ready to run 10,000+ simulations per household per scenario")
 
----
+
 ## Step 6: Run Simulations for Sample Household
 
 Demonstrate full Monte Carlo analysis for one representative household
@@ -684,7 +683,7 @@ for scenario_name, scenario_params in scenarios.items():
 
 print("\nAll simulations complete!")
 
----
+
 ## Step 7: Statistical Analysis of Results
 
 # Create summary comparison table
@@ -709,7 +708,7 @@ comparison_df = pd.DataFrame(comparison_data)
 print(comparison_df.to_string(index=False))
 print("="*120)
 
----
+
 ## Step 8: Visualization of Results
 
 # Comprehensive visualization of Monte Carlo results
@@ -794,7 +793,6 @@ plt.show()
 
 print("Visualizations complete")
 
----
 ## Step 9: Risk Assessment & Confidence Intervals
 
 # Calculate confidence intervals and risk metrics
@@ -837,7 +835,7 @@ for scenario_name in scenario_names:
 
 print("\n" + "="*100)
 
----
+
 ## Step 10: Decision Guidance & Interpretation
 
 ### Results Interpretation
@@ -1000,7 +998,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 4. **Tax Optimization:** Model refinancing decisions and mortgage interest deduction
 5. **Portfolio Theory:** Compare housing investment to alternative asset allocations
 
----
+
 
 **Author:** Horacio Fonseca, Data Analyst
 
@@ -1010,7 +1008,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 **Live Application:** [Streamlit App Link]  
 **Date:** October 2025
 
----
+
 
 *This analysis demonstrates Monte Carlo simulation methodology for housing affordability decision-making under uncertainty. All results are based on synthetic data and probabilistic models. Consult qualified financial professionals before making housing decisions.*
 """
