@@ -357,7 +357,7 @@ print("Data exploration complete")
 
 ## Step 4: Define Housing Scenarios & Parameters
 
-Four scenarios with different cost structures and risk profiles
+##Four scenarios with different cost structures and risk profiles
 
 @dataclass
 class HousingScenarioParameters:
@@ -446,7 +446,7 @@ for name, params in scenarios.items():
 
 ## Step 5: Monte Carlo Simulation Implementation
 
-Core simulation engine - models 10,000+ scenarios per household per housing option
+##Core simulation engine - models 10,000+ scenarios per household per housing option
 
 def simulate_housing_scenario(household, scenario_params, num_simulations=10000, time_horizon_years=10):
     """
@@ -649,7 +649,7 @@ print("Ready to run 10,000+ simulations per household per scenario")
 
 ## Step 6: Run Simulations for Sample Household
 
-Demonstrate full Monte Carlo analysis for one representative household
+## Demonstrate full Monte Carlo analysis for one representative household
 
 # Select a representative household (median income, moderate risk)
 median_income = households_df['annual_income'].median()
@@ -879,7 +879,7 @@ ELSE:
 # Generate automated recommendation for sample household
 def generate_recommendation(household, simulation_results):
     
-    Generate data-driven housing recommendation based on Monte Carlo results
+  ##  Generate data-driven housing recommendation based on Monte Carlo results
     
     income = household['annual_income']
     risk_score = household['risk_score']
