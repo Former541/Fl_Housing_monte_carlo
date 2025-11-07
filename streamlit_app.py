@@ -7,9 +7,7 @@
 **Date:** October 2025  
 **Project:** Monte Carlo Simulation for Housing Decision-Making Under Uncertainty
 
-**Project:** Data Mining, MDC, Professor Ernesto Lee.
----
-
+**Project:** Data Mining, MDC, Profe
 ## Executive Summary
 
 This analysis addresses a critical question facing Florida residents: **"Should I rent or buy a home, and if buying, which price range can I afford?"**
