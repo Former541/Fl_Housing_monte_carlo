@@ -93,7 +93,7 @@ print("Libraries loaded successfully")
 print(f"NumPy version: {np.__version__}")
 print(f"Pandas version: {pd.__version__}")
 
----
+
 ## Step 1: Load Configuration & Parameters
 
 # Florida-specific regional and economic parameters
@@ -993,7 +993,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 4. **Tax Optimization:** Model refinancing decisions and mortgage interest deduction
 5. **Portfolio Theory:** Compare housing investment to alternative asset allocations
 
----
+
 
 **Author:** Horacio Fonseca, Data Analyst
 
@@ -1003,7 +1003,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 **Live Application:** [Streamlit App Link]  
 **Date:** October 2025
 
----
+
 
 *This analysis demonstrates Monte Carlo simulation methodology for housing affordability decision-making under uncertainty. All results are based on synthetic data and probabilistic models. Consult qualified financial professionals before making housing decisions.*
 """
