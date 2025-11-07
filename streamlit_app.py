@@ -841,7 +841,7 @@ print("\n" + "="*100)
 ## Step 10: Decision Guidance & Interpretation
 
 ### Results Interpretation
-
+"""
 Based on 10,000 Monte Carlo simulations for this household profile, we can draw the following conclusions:
 
 #### Affordability Analysis
@@ -858,7 +858,7 @@ Based on 10,000 Monte Carlo simulations for this household profile, we can draw 
 - **Default Risk:** Increases with home price (5% for starter → 20%+ for premium)
 - **Cost Volatility:** Buying scenarios show wider cost distributions due to insurance/maintenance variability
 - **Equity Risk:** 10-20% probability of negative equity in down market scenarios
-
+"""
 ### Recommended Decision Framework
 
 ```
