@@ -75,7 +75,6 @@ Scalability: Generate 100s to 1000s of households
 Validation: Parameters match empirical Florida distributions
 Data Amplification: Algorithm generates 30% additional edge-case households to ensure robust testing across income/risk spectrum."""
 
-
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
