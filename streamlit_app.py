@@ -1,6 +1,6 @@
 # Florida Housing Affordability: Monte Carlo Decision Support Analysis
 
-**Author:** Horacio Fonseca, Data Analyst
+"""**Author:** Horacio Fonseca, Data Analyst
 
 **Author:** Oscar Rodriguez, Data Analyst
 
@@ -79,7 +79,7 @@ This analysis uses **synthetic household data** generated to match Florida demog
 3. **Scalability:** Generate 100s to 1000s of households
 4. **Validation:** Parameters match empirical Florida distributions
 
-**Data Amplification:** Algorithm generates 30% additional edge-case households to ensure robust testing across income/risk spectrum.
+**Data Amplification:** Algorithm generates 30% additional edge-case households to ensure robust testing across income/risk spectrum."""
 
 # Import required libraries
 import numpy as np
@@ -880,9 +880,9 @@ ELSE:
 
 # Generate automated recommendation for sample household
 def generate_recommendation(household, simulation_results):
-    """
+    
     Generate data-driven housing recommendation based on Monte Carlo results
-    """
+    
     income = household['annual_income']
     risk_score = household['risk_score']
     savings = household['savings']
@@ -951,7 +951,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 ## Conclusions & Business Impact
 
 ### Key Findings
-
+"""
 1. **Uncertainty Quantification:** Monte Carlo simulation reveals the full range of possible outcomes, not just average scenarios. For Florida housing, 90% confidence intervals span $50k-$150k in costs depending on insurance and market volatility.
 
 2. **Florida-Specific Risks:** Hurricane insurance represents 15-25% of total homeownership costs in high-risk regions. This dramatically changes affordability calculations compared to other states.
@@ -960,7 +960,7 @@ recommended_scenario = generate_recommendation(sample_household, simulation_resu
 
 4. **Risk-Reward Trade-offs:** Higher-priced homes build more equity ($150k+ over 10 years) but carry 3-4x higher default risk for moderate-income households.
 
-5. **Income Sensitivity:** A $10,000 income decrease can shift affordability from 80% to 45%, highlighting importance of emergency savings.
+5. **Income Sensitivity:** A $10,000 income decrease can shift affordability from 80% to 45%, highlighting importance of emergency savings. 
 
 ### Business Applications
 
