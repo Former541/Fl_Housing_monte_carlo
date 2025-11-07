@@ -170,7 +170,7 @@ print(f"  Price range across regions: {min(REGIONAL_PRICE_MULTIPLIERS.values()):
 
 ## Step 2: Household Data Generation
 
-Generate synthetic Florida households with realistic characteristics
+###Generate synthetic Florida households with realistic characteristics
 
 def generate_florida_households(n_households=100, amplify=True):
     """
